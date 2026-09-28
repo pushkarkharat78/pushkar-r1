@@ -1,816 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '3211994138992917');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=3211994138992917&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pushkar One</title>
+<head>
+
+    <!-- =========================================================
+         🚨 META PIXEL — THIS IS THE ONLY PLACE FOR YOUR PIXEL
+         
+         DO NOT PUT THE PIXEL ANYWHERE ELSE IN THIS FILE.
+         ========================================================= -->
+
+    <!-- META PIXEL START -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '3211994138992917');
+    fbq('track', 'PageView');
+    </script>
+
+    <noscript>
+        <img height="1"
+             width="1"
+             style="display:none"
+             src="https://www.facebook.com/tr?id=3211994138992917&ev=PageView&noscript=1">
+    </noscript>
+    <!-- META PIXEL END -->
+
+    <!-- =========================================================
+         🚨 END OF META PIXEL AREA
+         ========================================================= -->
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pushkar One</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .pt-page {
+            width: 100%;
+            min-height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pt-container {
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 20px 45px;
+            text-align: center;
+        }
+
+        /* =========================
+           HEADLINE
+           ========================= */
+
+        .pt-headline {
+            font-size: 38px;
+            line-height: 1.15;
+            font-weight: 800;
+            margin: 5px auto 20px;
+            color: #fff;
+            animation: ptFadeDown 0.8s ease both;
+        }
+
+        /* =========================
+           HERO IMAGE / LOGO
+           ========================= */
+
+        .pt-hero-image {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 230px;
+            max-height: 190px;
+            object-fit: contain;
+            margin: 0 auto 22px;
+            animation: ptFadeUp 0.9s ease both;
+        }
+
+        /* =========================
+           BENEFITS
+           ========================= */
+
+        .pt-benefits {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            animation: ptFadeUp 1s ease both;
+        }
+
+        .pt-benefit {
+            font-size: 22px;
+            line-height: 1.45;
+            font-weight: 700;
+            margin: 8px 0;
+            color: #fff;
+        }
+
+        /* =========================
+           EARNING TEXT
+           ========================= */
+
+        .pt-earning {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 25px 0 18px;
+            color: #fff;
+            animation: ptFadeUp 1.1s ease both;
+        }
+
+        /* =========================
+           TELEGRAM BUTTON
+           ========================= */
+
+        .pt-button-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 15px auto 12px;
+            animation: ptFadeUp 1.2s ease both;
+        }
+
+        .pt-telegram-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: min(92%, 560px);
+            min-height: 68px;
+            padding: 17px 25px;
+
+            border-radius: 12px;
+            border: none;
+
+            background: #229ED9;
+            color: #fff;
+
+            text-decoration: none;
+            font-size: 23px;
+            line-height: 1.2;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 0 0 rgba(34, 158, 217, 0.7),
+                0 8px 25px rgba(34, 158, 217, 0.25);
+
+            /* CONTINUOUS ZOOM ANIMATION */
+            animation: telegramZoom 2s ease-in-out infinite;
+        }
+
+        .pt-telegram-button:hover {
+            animation-play-state: paused;
+            transform: scale(1.04);
+        }
+
+        /* =========================
+           FREE TEXT
+           ========================= */
+
+        .pt-free-text {
+            font-size: 17px;
+            line-height: 1.4;
+            font-weight: 600;
+            margin: 10px 0 35px;
+            color: #fff;
+        }
+
+        /* =========================
+           DISCLAIMER
+           ========================= */
+
+        .pt-disclaimer {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 5px;
+            color: #bdbdbd;
+            font-size: 13px;
+            line-height: 1.65;
+            text-align: center;
+        }
+
+        .pt-disclaimer p {
+            margin: 0 0 18px;
+        }
+
+        /* =========================
+           ANIMATIONS
+           ========================= */
+
+        @keyframes telegramZoom {
+
+            0% {
+                transform: scale(1);
+                box-shadow:
+                    0 0 0 0 rgba(34, 158, 217, 0.55),
+                    0 8px 25px rgba(34, 158, 217, 0.25);
+            }
+
+            50% {
+                transform: scale(1.06);
+                box-shadow:
+                    0 0 0 10px rgba(34, 158, 217, 0),
+                    0 12px 35px rgba(34, 158, 217, 0.40);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow:
+                    0 0 0 0 rgba(34, 158, 217, 0),
+                    0 8px 25px rgba(34, 158, 217, 0.25);
+            }
+
+        }
+
+        @keyframes ptFadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes ptFadeDown {
+
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        /* =========================
+           TABLET
+           ========================= */
+
+        @media (max-width: 768px) {
+
+            .pt-container {
+                padding: 22px 16px 40px;
+            }
+
+            .pt-headline {
+                font-size: 32px;
+            }
+
+            .pt-hero-image {
+                max-width: 200px;
+                max-height: 170px;
+            }
+
+            .pt-benefit {
+                font-size: 20px;
+            }
+
+            .pt-earning {
+                font-size: 25px;
+            }
+
+            .pt-telegram-button {
+                font-size: 21px;
+                min-height: 64px;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 480px) {
+
+            .pt-container {
+                padding: 18px 13px 35px;
+            }
+
+            .pt-headline {
+                font-size: 27px;
+                line-height: 1.18;
+                margin-bottom: 17px;
+            }
+
+            .pt-hero-image {
+                max-width: 175px;
+                max-height: 155px;
+                margin-bottom: 18px;
+            }
+
+            .pt-benefit {
+                font-size: 17px;
+                line-height: 1.4;
+                margin: 7px 0;
+            }
+
+            .pt-earning {
+                font-size: 23px;
+                margin: 22px 0 15px;
+            }
+
+            .pt-telegram-button {
+                width: 94%;
+                min-height: 60px;
+                padding: 15px 15px;
+                font-size: 19px;
+                border-radius: 10px;
+            }
+
+            .pt-free-text {
+                font-size: 15px;
+                margin-bottom: 30px;
+            }
+
+            .pt-disclaimer {
+                font-size: 11px;
+                line-height: 1.55;
+            }
+
+        }
+
+        /* =========================
+           SMALL PHONES
+           ========================= */
+
+        @media (max-width: 360px) {
+
+            .pt-headline {
+                font-size: 24px;
+            }
+
+            .pt-hero-image {
+                max-width: 150px;
+                max-height: 135px;
+            }
+
+            .pt-benefit {
+                font-size: 16px;
+            }
+
+            .pt-earning {
+                font-size: 21px;
+            }
+
+            .pt-telegram-button {
+                font-size: 17px;
+                min-height: 56px;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+            }
+
+        }
+
+    </style>
 
-<style>
-
-/* =====================================================
-   RESET
-===================================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background: #000;
-    overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* =====================================================
-   MAIN LANDING PAGE
-===================================================== */
-
-.pt-page {
-    width: 100%;
-    min-height: 100vh;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(255, 0, 0, 0.12),
-            transparent 35%
-        ),
-        #000;
-
-    color: #fff;
-}
-
-
-/* =====================================================
-   CONTENT CONTAINER
-===================================================== */
-
-.pt-container {
-    width: 100%;
-    max-width: 650px;
-
-    margin: 0 auto;
-
-    padding:
-        28px
-        20px
-        35px;
-
-    text-align: center;
-}
-
-
-/* =====================================================
-   MAIN HEADING
-===================================================== */
-
-.pt-title {
-    margin: 0 0 20px;
-
-    color: #ffffff;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: clamp(34px, 6vw, 55px);
-
-    font-weight: 900;
-
-    line-height: 1.03;
-
-    letter-spacing: -1.5px;
-}
-
-
-/* =====================================================
-   LOGO / HERO IMAGE
-===================================================== */
-
-.pt-logo-wrap {
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    margin: 0 0 20px;
-}
-
-.pt-logo {
-    display: block;
-
-    width: min(230px, 52vw);
-
-    max-width: 230px;
-
-    max-height: 190px;
-
-    height: auto;
-
-    object-fit: contain;
-
-    border-radius: 12px;
-
-    box-shadow:
-        0 0 25px rgba(255, 0, 0, 0.16);
-}
-
-
-/* =====================================================
-   BENEFITS
-===================================================== */
-
-.pt-benefits {
-    width: 100%;
-
-    max-width: 560px;
-
-    margin: 0 auto 18px;
-
-    text-align: left;
-}
-
-.pt-benefit {
-    width: 100%;
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 8px;
-
-    margin-bottom: 9px;
-
-    color: #ffffff;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: clamp(16px, 3.5vw, 20px);
-
-    font-weight: 700;
-
-    line-height: 1.35;
-}
-
-
-/* =====================================================
-   START EARNING
-===================================================== */
-
-.pt-earning {
-    margin:
-        17px
-        0
-        15px;
-
-    color: #ffffff;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: clamp(20px, 4vw, 27px);
-
-    font-weight: 900;
-
-    line-height: 1.2;
-}
-
-
-/* =====================================================
-   TELEGRAM BUTTON WRAPPER
-
-   The wrapper is important because the animation
-   happens here instead of interfering with the link.
-===================================================== */
-
-.pt-button-wrapper {
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-
-    padding:
-        5px
-        0;
-}
-
-
-/* =====================================================
-   TELEGRAM BUTTON
-===================================================== */
-
-.pt-telegram-button {
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 100%;
-
-    max-width: 540px;
-
-    min-height: 62px;
-
-    padding:
-        15px
-        20px;
-
-    border-radius: 10px;
-
-    background: #229ed9;
-
-    color: #ffffff;
-
-    text-decoration: none;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: clamp(17px, 3.8vw, 21px);
-
-    font-weight: 900;
-
-    line-height: 1.2;
-
-    text-align: center;
-
-    cursor: pointer;
-
-    /*
-       THIS IS THE BUTTON EFFECT
-    */
-
-    animation:
-        telegramZoom
-        1.8s
-        ease-in-out
-        infinite;
-
-    box-shadow:
-        0 7px 22px rgba(34, 158, 217, 0.30);
-
-    will-change: transform;
-}
-
-
-/* =====================================================
-   ZOOM IN / ZOOM OUT EFFECT
-===================================================== */
-
-@keyframes telegramZoom {
-
-    0% {
-        transform: scale(1);
-        box-shadow:
-            0 7px 22px rgba(34, 158, 217, 0.30);
-    }
-
-    50% {
-        transform: scale(1.06);
-        box-shadow:
-            0 10px 34px rgba(34, 158, 217, 0.52);
-    }
-
-    100% {
-        transform: scale(1);
-        box-shadow:
-            0 7px 22px rgba(34, 158, 217, 0.30);
-    }
-
-}
-
-
-/* =====================================================
-   HOVER
-===================================================== */
-
-.pt-telegram-button:hover {
-
-    color: #ffffff;
-
-    text-decoration: none;
-
-    filter: brightness(1.08);
-}
-
-
-/* =====================================================
-   CLICK EFFECT
-===================================================== */
-
-.pt-telegram-button:active {
-
-    transform: scale(0.97);
-
-}
-
-
-/* =====================================================
-   FREE TELEGRAM TEXT
-===================================================== */
-
-.pt-free {
-
-    margin-top: 10px;
-
-    color: #ffffff;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    line-height: 1.3;
-}
-
-
-/* =====================================================
-   DISCLAIMER
-===================================================== */
-
-.pt-disclaimer {
-
-    width: 100%;
-
-    max-width: 620px;
-
-    margin:
-        28px
-        auto
-        0;
-
-    color: #a8a8a8;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 10.5px;
-
-    font-weight: 400;
-
-    line-height: 1.55;
-
-    text-align: left;
-}
-
-
-/* =====================================================
-   SIMPLE PAGE LOAD ANIMATION
-===================================================== */
-
-.pt-title,
-.pt-logo-wrap,
-.pt-benefits,
-.pt-earning,
-.pt-button-wrapper,
-.pt-free,
-.pt-disclaimer {
-
-    animation:
-        pageFadeIn
-        0.6s
-        ease
-        both;
-}
-
-
-.pt-logo-wrap {
-    animation-delay: 0.05s;
-}
-
-.pt-benefits {
-    animation-delay: 0.10s;
-}
-
-.pt-earning {
-    animation-delay: 0.15s;
-}
-
-.pt-button-wrapper {
-    animation-delay: 0.20s;
-}
-
-.pt-free {
-    animation-delay: 0.25s;
-}
-
-.pt-disclaimer {
-    animation-delay: 0.30s;
-}
-
-
-@keyframes pageFadeIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (min-width: 601px) {
-
-    .pt-container {
-        padding-top: 34px;
-    }
-
-    .pt-logo {
-        width: 220px;
-        max-width: 220px;
-        max-height: 180px;
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 600px) {
-
-    .pt-container {
-
-        max-width: 500px;
-
-        padding:
-            22px
-            15px
-            28px;
-    }
-
-
-    .pt-title {
-
-        margin-bottom: 15px;
-
-        font-size:
-            clamp(
-                31px,
-                9vw,
-                44px
-            );
-
-        line-height: 1.04;
-
-        letter-spacing: -1px;
-    }
-
-
-    /* CONTROLLED MOBILE LOGO */
-
-    .pt-logo {
-
-        width: min(175px, 48vw);
-
-        max-width: 175px;
-
-        max-height: 155px;
-
-        border-radius: 10px;
-    }
-
-
-    .pt-logo-wrap {
-
-        margin-bottom: 16px;
-    }
-
-
-    .pt-benefits {
-
-        margin-bottom: 14px;
-    }
-
-
-    .pt-benefit {
-
-        margin-bottom: 8px;
-
-        font-size: 16px;
-
-        line-height: 1.32;
-    }
-
-
-    .pt-earning {
-
-        margin:
-            14px
-            0
-            13px;
-
-        font-size: 20px;
-    }
-
-
-    /* MOBILE TELEGRAM BUTTON */
-
-    .pt-button-wrapper {
-
-        padding:
-            5px
-            0;
-    }
-
-
-    .pt-telegram-button {
-
-        min-height: 60px;
-
-        padding:
-            14px
-            15px;
-
-        border-radius: 9px;
-
-        font-size: 17px;
-    }
-
-
-    .pt-free {
-
-        margin-top: 8px;
-
-        font-size: 13px;
-    }
-
-
-    .pt-disclaimer {
-
-        margin-top: 24px;
-
-        font-size: 10px;
-
-        line-height: 1.5;
-    }
-
-}
-
-
-/* =====================================================
-   SMALL PHONES
-===================================================== */
-
-@media (max-width: 360px) {
-
-    .pt-container {
-
-        padding:
-            18px
-            12px
-            25px;
-    }
-
-
-    .pt-title {
-
-        margin-bottom: 13px;
-
-        font-size: 30px;
-    }
-
-
-    .pt-logo {
-
-        width: 150px;
-
-        max-width: 150px;
-
-        max-height: 135px;
-    }
-
-
-    .pt-benefit {
-
-        font-size: 15px;
-    }
-
-
-    .pt-earning {
-
-        font-size: 19px;
-    }
-
-
-    .pt-telegram-button {
-
-        min-height: 57px;
-
-        font-size: 16px;
-    }
-
-}
-
-
-/* =====================================================
-   REDUCE MOTION ACCESSIBILITY
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .pt-title,
-    .pt-logo-wrap,
-    .pt-benefits,
-    .pt-earning,
-    .pt-button-wrapper,
-    .pt-free,
-    .pt-disclaimer {
-
-        animation: none;
-    }
-
-    .pt-telegram-button {
-
-        animation: none;
-    }
-
-}
-
-</style>
 </head>
 
 
 <body>
 
-<div class="pt-page">
+    <main class="pt-page">
 
-    <main class="pt-container">
+        <div class="pt-container">
 
+            <!-- =========================
+                 HEADLINE
+                 ========================= -->
 
-        <!-- ==========================================
-             HEADLINE
-        =========================================== -->
-
-        <h1 class="pt-title">
-            #1 Most Profitable<br>
-            Trading Community in India
-        </h1>
+            <h1 class="pt-headline">
+                #1 Most Profitable Trading Community in India
+            </h1>
 
 
-        <!-- ==========================================
-             CONTROLLED LOGO
-        =========================================== -->
-
-        <div class="pt-logo-wrap">
+            <!-- =========================
+                 HERO IMAGE
+                 ========================= -->
 
             <img
-                class="pt-logo"
+                class="pt-hero-image"
                 src="https://gotradingnow.in/wp-content/uploads/2026/09/2026-09-18-06.02.06.jpg"
-                alt="Pushkar Trader"
+                alt="Pushkar Trading Community"
             >
 
-        </div>
+
+            <!-- =========================
+                 BENEFITS
+                 ========================= -->
+
+            <section class="pt-benefits">
+
+                <p class="pt-benefit">
+                    🔥 DAILY 10-12 Free Sureshot Signals
+                </p>
+
+                <p class="pt-benefit">
+                    👨🏻‍💻 FREE Access to Live Session Everyday
+                </p>
+
+                <p class="pt-benefit">
+                    🧠 1-1 Mentorship/Psychological Sessions
+                </p>
+
+            </section>
 
 
-        <!-- ==========================================
-             BENEFITS
-        =========================================== -->
+            <!-- =========================
+                 EARNING TEXT
+                 ========================= -->
 
-        <section class="pt-benefits">
+            <div class="pt-earning">
+                💰 Start Earning Today
+            </div>
 
-            <div class="pt-benefit">
 
-                <span>🔥</span>
+            <!-- =================================================
+                 TELEGRAM BUTTON
+                 
+                 🚨 ONLY CHANGE THIS LINK
+                 ================================================= -->
 
-                <span>
-                    DAILY 10-12 Free Sureshot Signals
-                </span>
+            <div class="pt-button-wrapper">
+
+                <a
+                    class="pt-telegram-button"
+                    href="YOUR-TELEGRAM-LINK-HERE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onclick="if(typeof fbq === 'function'){fbq('track','Lead');}"
+                >
+                    Join Our Free Telegram Channel
+                </a>
 
             </div>
 
 
-            <div class="pt-benefit">
-
-                <span>👨🏻‍💻</span>
-
-                <span>
-                    FREE Access to Live Session Everyday
-                </span>
-
+            <div class="pt-free-text">
+                100% Free – Telegram Group
             </div>
 
 
-            <div class="pt-benefit">
+            <!-- =========================
+                 DISCLAIMER
+                 ========================= -->
 
-                <span>🧠</span>
+            <div class="pt-disclaimer">
 
-                <span>
-                    1-1 Mentorship/Psychological Sessions
-                </span>
+                <p>
+                    Disclaimer: This site is not a part of the Facebook™️
+                    website or Facebook™️ Inc. Additionally, This site is NOT
+                    endorsed by Facebook™️ in any way. FACEBOOK™️ is a
+                    trademark of FACEBOOK™️, Inc. As stipulated by law, we can
+                    not and do not make any guarantees about your ability to
+                    get results or earn any money with my ideas, information,
+                    tools or strategies.
+                </p>
+
+                <p>
+                    I just want to help you by giving great content, direction
+                    and strategies that worked well for me and my students and
+                    that I believe can help you move forward. All of my terms,
+                    privacy policies and disclaimers for this program and
+                    website can be accessed via the links. I feel transparency
+                    is important and I hold ourselves (you & me) to a high
+                    standard of integrity. Thanks for stopping by. I hope this
+                    training and content brings you a lot of value & results.
+                </p>
 
             </div>
 
-        </section>
-
-
-        <!-- ==========================================
-             EARNING
-        =========================================== -->
-
-        <div class="pt-earning">
-            💰 Start Earning Today
         </div>
-
-
-        <!-- ==========================================
-             MAIN CONVERSION BUTTON
-        =========================================== -->
-
-        <div class="pt-button-wrapper">
-
-            <a
-                class="pt-telegram-button"
-                href="https://t.me/+fMrgH33ZSMc4YWY1"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Join Our Free Telegram Channel
-            </a>
-
-        </div>
-
-
-        <!-- ==========================================
-             FREE TEXT
-        =========================================== -->
-
-        <div class="pt-free">
-            100% Free – Telegram Group
-        </div>
-
-
-        <!-- ==========================================
-             DISCLAIMER
-        =========================================== -->
-
-        <div class="pt-disclaimer">
-
-            Disclaimer: This site is not a part of the Facebook™️ website or
-            Facebook™️ Inc. Additionally, This site is NOT endorsed by
-            Facebook™️ in any way. FACEBOOK™️ is a trademark of FACEBOOK™️,
-            Inc. As stipulated by law, we can not and do not make any
-            guarantees about your ability to get results or earn any money
-            with my ideas, information, tools or strategies.
-
-            <br><br>
-
-            I just want to help you by giving great content, direction and
-            strategies that worked well for me and my students and that I
-            believe can help you move forward. All of my terms, privacy
-            policies and disclaimers for this program and website can be
-            accessed via the links. I feel transparency is important and I
-            hold ourselves (you & me) to a high standard of integrity.
-            Thanks for stopping by. I hope this training and content brings
-            you a lot of value & results.
-
-        </div>
-
 
     </main>
 
-</div>
-
 </body>
+
 </html>
