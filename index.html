@@ -1,0 +1,517 @@
+<style>
+/* ================================
+   TRADE WITH PUSHKAR LANDING PAGE
+================================ */
+
+.twp-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #050505;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+/* HERO */
+
+.twp-hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 35px 18px;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255, 0, 0, 0.18),
+            transparent 45%
+        ),
+        #050505;
+}
+
+.twp-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.95)
+        ),
+        url("YOUR-IMAGE-URL-HERE");
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.38;
+
+    z-index: 0;
+}
+
+.twp-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+/* IMAGE */
+
+.twp-profile {
+    width: 120px;
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #ff1c1c;
+
+    box-shadow:
+        0 0 20px rgba(255,0,0,0.5),
+        0 0 60px rgba(255,0,0,0.2);
+
+    margin-bottom: 22px;
+}
+
+
+/* SMALL LABEL */
+
+.twp-label {
+    display: inline-block;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #d7d7d7;
+
+    background: rgba(255,255,255,0.07);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    margin-bottom: 20px;
+}
+
+
+/* HEADLINE */
+
+.twp-heading {
+    font-size: clamp(38px, 9vw, 64px);
+
+    line-height: 1.02;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    margin: 0 0 18px;
+}
+
+.twp-heading span {
+    color: #ff2424;
+}
+
+
+/* DESCRIPTION */
+
+.twp-description {
+    color: #c7c7c7;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    max-width: 520px;
+
+    margin: 0 auto 25px;
+}
+
+
+/* BENEFITS */
+
+.twp-benefits {
+    list-style: none;
+
+    margin: 0 auto 28px;
+
+    padding: 0;
+
+    max-width: 480px;
+
+    text-align: left;
+}
+
+.twp-benefits li {
+    font-size: 16px;
+
+    color: #e7e7e7;
+
+    margin: 13px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.twp-check {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #ff2424;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+
+/* ================================
+   JOIN BUTTON
+================================ */
+
+.twp-join {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    padding: 19px 25px;
+
+    border-radius: 12px;
+
+    background: #229ed9;
+
+    color: #fff !important;
+
+    text-decoration: none !important;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    letter-spacing: .2px;
+
+    box-shadow:
+        0 0 0 0 rgba(34,158,217,.7),
+        0 12px 30px rgba(34,158,217,.25);
+
+    animation: twpPulse 2s infinite;
+
+    transition: .2s ease;
+
+    overflow: hidden;
+}
+
+
+/* Moving shine */
+
+.twp-join::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,.30),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    animation: twpShine 3s infinite;
+}
+
+
+.twp-join:hover {
+    transform: translateY(-3px);
+
+    background: #1d91c7;
+
+    box-shadow:
+        0 15px 40px rgba(34,158,217,.45);
+}
+
+
+.twp-telegram {
+    margin-right: 9px;
+
+    font-size: 21px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.twp-button-text {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Button pulse */
+
+@keyframes twpPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(34,158,217,.65),
+            0 12px 30px rgba(34,158,217,.25);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 12px rgba(34,158,217,0),
+            0 12px 35px rgba(34,158,217,.30);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(34,158,217,0),
+            0 12px 30px rgba(34,158,217,.25);
+    }
+}
+
+
+/* Button shine */
+
+@keyframes twpShine {
+
+    0% {
+        left: -120%;
+    }
+
+    45% {
+        left: 140%;
+    }
+
+    100% {
+        left: 140%;
+    }
+}
+
+
+/* FREE TEXT */
+
+.twp-free {
+    color: #8e8e8e;
+
+    font-size: 12px;
+
+    margin-top: 13px;
+}
+
+
+/* DISCLAIMER */
+
+.twp-disclaimer {
+    max-width: 620px;
+
+    margin: 28px auto 0;
+
+    color: #666;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .twp-hero {
+        padding: 30px 17px;
+    }
+
+    .twp-profile {
+        width: 100px;
+        height: 100px;
+    }
+
+    .twp-heading {
+        font-size: 43px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .twp-description {
+        font-size: 16px;
+    }
+
+    .twp-benefits li {
+        font-size: 15px;
+    }
+
+    .twp-join {
+        font-size: 17px;
+
+        padding: 18px 20px;
+    }
+
+}
+</style>
+
+
+<div class="twp-page">
+
+    <section class="twp-hero">
+
+        <div class="twp-content">
+
+
+            <!-- YOUR IMAGE -->
+
+            <img
+                class="twp-profile"
+                src="YOUR-IMAGE-URL-HERE"
+                alt="Trade with Pushkar"
+            >
+
+
+            <!-- LABEL -->
+
+            <div class="twp-label">
+                TRADE WITH PUSHKAR
+            </div>
+
+
+            <!-- HEADLINE -->
+
+            <h1 class="twp-heading">
+
+                YOUR TRADING
+                <br>
+
+                <span>STARTS HERE.</span>
+
+            </h1>
+
+
+            <!-- DESCRIPTION -->
+
+            <p class="twp-description">
+
+                Join our free Telegram channel for
+                market insights, trading-related updates
+                and educational content delivered directly
+                to your phone.
+
+            </p>
+
+
+            <!-- BENEFITS -->
+
+            <ul class="twp-benefits">
+
+                <li>
+                    <span class="twp-check">✓</span>
+                    Regular market updates
+                </li>
+
+                <li>
+                    <span class="twp-check">✓</span>
+                    Trading insights & education
+                </li>
+
+                <li>
+                    <span class="twp-check">✓</span>
+                    Direct access through Telegram
+                </li>
+
+            </ul>
+
+
+            <!-- JOIN BUTTON -->
+
+            <a
+                class="twp-join"
+                href="https://t.me/+fMrgH33ZSMc4YWY1"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <span class="twp-telegram">
+                    ➤
+                </span>
+
+                <span class="twp-button-text">
+                    JOIN TELEGRAM NOW
+                </span>
+
+            </a>
+
+
+            <!-- SMALL TEXT -->
+
+            <div class="twp-free">
+                100% Free • No registration • Instant access
+            </div>
+
+vgbfiuZA
+            <!-- DISCLAIMER -->
+
+            <div class="twp-disclaimer">
+
+                Trading and investing involve risk.
+                The information provided through this
+                channel is for informational and educational
+                purposes only and should not be considered
+                financial advice. Past performance does not
+                guarantee future results.
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</div>9i
