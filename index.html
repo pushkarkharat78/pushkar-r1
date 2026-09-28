@@ -1,280 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Pushkar one - Go Trading Now</title>
+<title>Pushkar one - Go Trading Now</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 15%, rgba(255, 0, 0, .18), transparent 32%),
+        linear-gradient(180deg, #050505 0%, #000 100%);
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 45px 20px 35px;
+    text-align: center;
+}
+
+/* =========================
+   HEADLINE
+========================= */
+
+.headline {
+    font-size: clamp(36px, 7vw, 64px);
+    line-height: 1.02;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 28px;
+
+    animation: fadeDown .8s ease both;
+}
+
+.headline::first-line {
+    color: #fff;
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero {
+    width: min(100%, 420px);
+    margin: 0 auto 30px;
+    display: block;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, .25),
+        0 0 70px rgba(255, 0, 0, .12);
+
+    animation: heroIn 1s ease both;
+}
+
+/* =========================
+   BENEFITS
+========================= */
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin: 0 auto 30px;
+
+    text-align: left;
+
+    animation: fadeUp .9s ease .15s both;
+}
+
+.benefit {
+    font-size: clamp(17px, 3.8vw, 22px);
+    line-height: 1.35;
+    font-weight: 700;
+
+    padding: 5px 0;
+}
+
+/* =========================
+   EARNING TEXT
+========================= */
+
+.earning {
+    font-size: clamp(20px, 4.5vw, 28px);
+    font-weight: 900;
+    margin: 22px 0;
+
+    animation: fadeUp .9s ease .25s both;
+}
+
+/* =========================
+   TELEGRAM BUTTON
+========================= */
+
+.telegram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 530px;
+    min-height: 64px;
+
+    margin: 0 auto;
+
+    padding: 15px 24px;
+
+    border-radius: 10px;
+
+    background: #229ed9;
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: clamp(17px, 4vw, 21px);
+    font-weight: 900;
+
+    box-shadow:
+        0 8px 25px rgba(34,158,217,.25);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        filter .2s ease;
+
+    animation:
+        fadeUp .9s ease .35s both,
+        pulse 2.4s ease-in-out 1.5s infinite;
+}
+
+.telegram:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 12px 35px rgba(34,158,217,.4);
+}
+
+.telegram:active {
+    transform: scale(.98);
+}
+
+/* =========================
+   FREE TEXT
+========================= */
+
+.free {
+    margin-top: 14px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #fff;
+
+    animation: fadeUp .9s ease .45s both;
+}
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer {
+    margin-top: 42px;
+
+    padding: 0 3px;
+
+    color: #bdbdbd;
+
+    text-align: left;
+
+    font-size: 11px;
+    line-height: 1.65;
+
+    animation: fadeUp 1s ease .55s both;
+}
+
+/* =========================
+   SECOND COPY SECTION
+========================= */
+
+.second-section {
+    margin-top: 80px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
     }
 
-    html,
-    body {
-      width: 100%;
-      min-height: 100%;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #111111;
-      overflow-x: hidden;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
     }
 
-    .landing-page {
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    .container {
-      width: 100%;
-      max-width: 720px;
-      padding: 45px 22px 35px;
-      text-align: center;
+}
+
+@keyframes heroIn {
+
+    from {
+        opacity: 0;
+        transform: scale(.88);
     }
 
-    /* -------------------------
-       MAIN HEADLINE
-    ------------------------- */
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 8px 25px rgba(34,158,217,.25);
+    }
+
+    50% {
+        box-shadow:
+            0 8px 35px rgba(34,158,217,.5);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .wrapper {
+        padding:
+            30px
+            15px
+            28px;
+    }
 
     .headline {
-      font-size: clamp(34px, 7vw, 62px);
-      line-height: 1.04;
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      margin-bottom: 30px;
+        font-size: clamp(34px, 10vw, 48px);
+        letter-spacing: -1.3px;
+        margin-bottom: 23px;
     }
 
-    /* -------------------------
-       IMAGE
-    ------------------------- */
-
-    .hero-image {
-      width: 100%;
-      max-width: 520px;
-      height: auto;
-      display: block;
-      margin: 0 auto 30px;
-      border-radius: 8px;
+    .hero {
+        width: min(100%, 360px);
+        margin-bottom: 24px;
     }
-
-    /* -------------------------
-       BENEFITS
-    ------------------------- */
 
     .benefits {
-      width: 100%;
-      max-width: 620px;
-      margin: 0 auto 30px;
-      text-align: left;
+        gap: 10px;
+        margin-bottom: 23px;
     }
 
     .benefit {
-      font-size: clamp(17px, 3.8vw, 23px);
-      line-height: 1.45;
-      font-weight: 600;
-      margin-bottom: 12px;
+        font-size: 17px;
     }
-
-    /* -------------------------
-       CTA
-    ------------------------- */
 
     .earning {
-      font-size: clamp(19px, 4vw, 26px);
-      font-weight: 800;
-      margin: 25px 0 22px;
+        font-size: 21px;
+        margin: 19px 0;
     }
 
-    .telegram-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: min(100%, 520px);
-      min-height: 64px;
-      padding: 16px 25px;
-      border-radius: 10px;
-      background: #229ed9;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: clamp(17px, 4vw, 21px);
-      font-weight: 800;
-      box-shadow: 0 8px 25px rgba(34, 158, 217, 0.25);
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    .telegram {
+        min-height: 58px;
+        font-size: 17px;
+        padding: 13px 17px;
     }
 
-    .telegram-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(34, 158, 217, 0.32);
+    .free {
+        font-size: 14px;
     }
-
-    .telegram-button:active {
-      transform: translateY(0);
-    }
-
-    .free-text {
-      margin-top: 14px;
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    /* -------------------------
-       DISCLAIMER
-    ------------------------- */
 
     .disclaimer {
-      margin: 40px auto 0;
-      max-width: 680px;
-      text-align: left;
-      font-size: 12px;
-      line-height: 1.6;
-      color: #555555;
+        margin-top: 30px;
+        font-size: 10.5px;
+        line-height: 1.6;
     }
 
-    /* -------------------------
-       MOBILE
-    ------------------------- */
+}
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 30px 16px 28px;
-      }
+/* =========================
+   SMALL PHONES
+========================= */
 
-      .headline {
-        margin-bottom: 22px;
-      }
+@media (max-width: 360px) {
 
-      .hero-image {
-        margin-bottom: 24px;
-      }
-
-      .benefits {
-        margin-bottom: 24px;
-      }
-
-      .benefit {
-        margin-bottom: 10px;
-      }
-
-      .earning {
-        margin: 20px 0 18px;
-      }
-
-      .telegram-button {
-        min-height: 58px;
-        padding: 14px 18px;
-      }
-
-      .disclaimer {
-        margin-top: 32px;
-        font-size: 11px;
-        line-height: 1.55;
-      }
+    .wrapper {
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
-    /* -------------------------
-       VERY SMALL PHONES
-    ------------------------- */
+    .headline {
+        font-size: 32px;
+    }
 
-    @media (max-width: 360px) {
-      .container {
-        padding-left: 13px;
-        padding-right: 13px;
-      }
-
-      .benefit {
+    .benefit {
         font-size: 16px;
-      }
-
-      .telegram-button {
-        font-size: 16px;
-      }
     }
-  </style>
+
+    .telegram {
+        font-size: 16px;
+    }
+
+}
+</style>
 </head>
 
 <body>
 
-  <main class="landing-page">
+<div class="page">
 
-    <div class="container">
+    <div class="wrapper">
 
-      <h1 class="headline">
-        #1 Most Profitable<br>
-        Trading Community in India
-      </h1>
+        <!-- HEADLINE -->
 
-      <!-- Replace this with the image from your landing page -->
-      <img
-        class="hero-image"
-        src="YOUR-IMAGE-URL-HERE"
-        alt=""
-      >
+        <h1 class="headline">
+            #1 Most Profitable<br>
+            Trading Community in India
+        </h1>
 
-      <section class="benefits">
 
-        <div class="benefit">
-          🔥 DAILY 10-12 Free Sureshot Signals
+        <!-- PUSHKAR TRADER IMAGE -->
+
+        <img
+            class="hero"
+            src="https://gotradingnow.in/wp-content/uploads/2026/09/2026-09-18-06.02.06.jpg"
+            alt="Pushkar Trader"
+        >
+
+
+        <!-- BENEFITS -->
+
+        <div class="benefits">
+
+            <div class="benefit">
+                🔥 DAILY 10-12 Free Sureshot Signals
+            </div>
+
+            <div class="benefit">
+                👨🏻‍💻 FREE Access to Live Session Everyday
+            </div>
+
+            <div class="benefit">
+                🧠 1-1 Mentorship/Psychological Sessions
+            </div>
+
         </div>
 
-        <div class="benefit">
-          👨🏻‍💻 FREE Access to Live Session Everyday
+
+        <!-- EARNING -->
+
+        <div class="earning">
+            💰 Start Earning Today
         </div>
 
-        <div class="benefit">
-          🧠 1-1 Mentorship/Psychological Sessions
+
+        <!-- TELEGRAM -->
+
+        <a
+            class="telegram"
+            href="https://telegram.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Join Our Free Telegram Channel
+        </a>
+
+
+        <div class="free">
+            100% Free – Telegram Group
         </div>
 
-      </section>
 
-      <div class="earning">
-        💰 Start Earning Today
-      </div>
+        <!-- DISCLAIMER -->
 
-      <a
-        class="telegram-button"
-        href="https://telegram.me/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Join Our Free Telegram Channel
-      </a>
+        <div class="disclaimer">
 
-      <div class="free-text">
-        100% Free – Telegram Group
-      </div>
+            Disclaimer: This site is not a part of the Facebook™️ website or
+            Facebook™️ Inc. Additionally, This site is NOT endorsed by
+            Facebook™️ in any way. FACEBOOK™️ is a trademark of FACEBOOK™️,
+            Inc. As stipulated by law, we can not and do not make any
+            guarantees about your ability to get results or earn any money
+            with my ideas, information, tools or strategies.
 
-      <div class="disclaimer">
-        Disclaimer: This site is not a part of the Facebook™️ website or
-        Facebook™️ Inc. Additionally, This site is NOT endorsed by Facebook™️
-        in any way. FACEBOOK™️ is a trademark of FACEBOOK™️, Inc. As
-        stipulated by law, we can not and do not make any guarantees about
-        your ability to get results or earn any money with my ideas,
-        information, tools or strategies.
+            <br><br>
 
-        <br><br>
+            I just want to help you by giving great content, direction and
+            strategies that worked well for me and my students and that I
+            believe can help you move forward. All of my terms, privacy
+            policies and disclaimers for this program and website can be
+            accessed via the links. I feel transparency is important and I
+            hold ourselves (you & me) to a high standard of integrity.
+            Thanks for stopping by. I hope this training and content brings
+            you a lot of value & results.
 
-        I just want to help you by giving great content, direction and
-        strategies that worked well for me and my students and that I believe
-        can help you move forward. All of my terms, privacy policies and
-        disclaimers for this program and website can be accessed via the
-        links. I feel transparency is important and I hold ourselves
-        (you & me) to a high standard of integrity. Thanks for stopping by.
-        I hope this training and content brings you a lot of value & results.
-      </div>
+        </div>
+
+
+        <!-- SECOND SECTION -->
+
+        <div class="second-section">
+
+            <h1 class="headline">
+                #1 Most Profitable<br>
+                Trading Community in India
+            </h1>
+
+            <div class="benefits">
+
+                <div class="benefit">
+                    🔥 DAILY 10-12 Free Sureshot Signals
+                </div>
+
+                <div class="benefit">
+                    👨🏻‍💻 FREE Access to Live Session Everyday
+                </div>
+
+                <div class="benefit">
+                    🧠 1-1 Mentorship/Psychological Sessions
+                </div>
+
+            </div>
+
+            <div class="earning">
+                💰 Start Earning Today
+            </div>
+
+            <a
+                class="telegram"
+                href="https://telegram.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Join Our Free Telegram Channel
+            </a>
+
+            <div class="free">
+                100% Free – Telegram Group
+            </div>
+
+            <div class="disclaimer">
+
+                Disclaimer: This site is not a part of the Facebook™️ website
+                or Facebook™️ Inc. Additionally, This site is NOT endorsed by
+                Facebook™️ in any way. FACEBOOK™️ is a trademark of FACEBOOK™️,
+                Inc. As stipulated by law, we can not and do not make any
+                guarantees about your ability to get results or earn any money
+                with my ideas, information, tools or strategies.
+
+                <br><br>
+
+                I just want to help you by giving great content, direction and
+                strategies that worked well for me and my students and that I
+                believe can help you move forward. All of my terms, privacy
+                policies and disclaimers for this program and website can be
+                accessed via the links. I feel transparency is important and I
+                hold ourselves (you & me) to a high standard of integrity.
+                Thanks for stopping by. I hope this training and content brings
+                you a lot of value & results.
+
+            </div>
+
+        </div>
 
     </div>
 
-  </main>
+</div>
 
 </body>
 </html>
