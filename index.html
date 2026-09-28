@@ -1,250 +1,280 @@
-<style>
-.twp-page {
-    width: 100%;
-    min-height: 100vh;
-    background: #ffffff;
-    color: #111111;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    padding: 20px 15px 30px;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.twp-container {
-    width: 100%;
-    max-width: 520px;
-    margin: 0 auto;
-}
+  <title>Pushkar one - Go Trading Now</title>
 
-.twp-title {
-    margin: 0 0 20px;
-    font-size: 42px;
-    line-height: 1.08;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-.twp-title span {
-    display: block;
-}
-
-.twp-logo {
-    display: block;
-    width: 300px;
-    height: 300px;
-    max-width: 100%;
-    object-fit: contain;
-    margin: 0 auto 20px;
-}
-
-.twp-benefits {
-    margin: 0 auto 20px;
-    padding: 0;
-    list-style: none;
-}
-
-.twp-benefits li {
-    margin: 11px 0;
-    font-size: 17px;
-    line-height: 1.4;
-    font-weight: 600;
-}
-
-.twp-earning {
-    margin: 18px 0 20px;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.twp-button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 430px;
-    min-height: 60px;
-    margin: 0 auto 12px;
-    padding: 16px 20px;
-    box-sizing: border-box;
-
-    background: #229ED9;
-    color: #ffffff !important;
-
-    text-decoration: none !important;
-    border-radius: 6px;
-
-    font-size: 19px;
-    font-weight: 800;
-
-    overflow: hidden;
-    cursor: pointer;
-
-    box-shadow: 0 5px 15px rgba(34,158,217,0.22);
-
-    animation: twpPulse 2s infinite;
-}
-
-.twp-button::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 60%;
-    height: 100%;
-
-    background: linear-gradient(
-        110deg,
-        transparent,
-        rgba(255,255,255,0.40),
-        transparent
-    );
-
-    transform: skewX(-20deg);
-    animation: twpShine 3s infinite;
-}
-
-.twp-button-text {
-    position: relative;
-    z-index: 2;
-}
-
-.twp-free {
-    margin: 10px 0 28px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #222222;
-}
-
-.twp-disclaimer {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 0 5px;
-
-    font-size: 11px;
-    line-height: 1.55;
-    color: #666666;
-    text-align: center;
-}
-
-@keyframes twpPulse {
-    0% {
-        transform: scale(1);
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    50% {
-        transform: scale(1.025);
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
     }
 
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes twpShine {
-    0% {
-        left: -120%;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      overflow-x: hidden;
     }
 
-    45% {
-        left: 140%;
+    .landing-page {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
     }
 
-    100% {
-        left: 140%;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .twp-page {
-        padding: 15px 12px 25px;
+    .container {
+      width: 100%;
+      max-width: 720px;
+      padding: 45px 22px 35px;
+      text-align: center;
     }
 
-    .twp-title {
-        font-size: 34px;
-        margin-bottom: 15px;
+    /* -------------------------
+       MAIN HEADLINE
+    ------------------------- */
+
+    .headline {
+      font-size: clamp(34px, 7vw, 62px);
+      line-height: 1.04;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      margin-bottom: 30px;
     }
 
-    .twp-logo {
-        width: 280px;
-        height: 280px;
-        margin-bottom: 15px;
+    /* -------------------------
+       IMAGE
+    ------------------------- */
+
+    .hero-image {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      display: block;
+      margin: 0 auto 30px;
+      border-radius: 8px;
     }
 
-    .twp-benefits li {
-        font-size: 16px;
-        margin: 10px 0;
+    /* -------------------------
+       BENEFITS
+    ------------------------- */
+
+    .benefits {
+      width: 100%;
+      max-width: 620px;
+      margin: 0 auto 30px;
+      text-align: left;
     }
 
-    .twp-earning {
-        font-size: 17px;
+    .benefit {
+      font-size: clamp(17px, 3.8vw, 23px);
+      line-height: 1.45;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
-    .twp-button {
-        font-size: 18px;
+    /* -------------------------
+       CTA
+    ------------------------- */
+
+    .earning {
+      font-size: clamp(19px, 4vw, 26px);
+      font-weight: 800;
+      margin: 25px 0 22px;
+    }
+
+    .telegram-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 520px);
+      min-height: 64px;
+      padding: 16px 25px;
+      border-radius: 10px;
+      background: #229ed9;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: clamp(17px, 4vw, 21px);
+      font-weight: 800;
+      box-shadow: 0 8px 25px rgba(34, 158, 217, 0.25);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .telegram-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(34, 158, 217, 0.32);
+    }
+
+    .telegram-button:active {
+      transform: translateY(0);
+    }
+
+    .free-text {
+      margin-top: 14px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* -------------------------
+       DISCLAIMER
+    ------------------------- */
+
+    .disclaimer {
+      margin: 40px auto 0;
+      max-width: 680px;
+      text-align: left;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #555555;
+    }
+
+    /* -------------------------
+       MOBILE
+    ------------------------- */
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 16px 28px;
+      }
+
+      .headline {
+        margin-bottom: 22px;
+      }
+
+      .hero-image {
+        margin-bottom: 24px;
+      }
+
+      .benefits {
+        margin-bottom: 24px;
+      }
+
+      .benefit {
+        margin-bottom: 10px;
+      }
+
+      .earning {
+        margin: 20px 0 18px;
+      }
+
+      .telegram-button {
         min-height: 58px;
+        padding: 14px 18px;
+      }
+
+      .disclaimer {
+        margin-top: 32px;
+        font-size: 11px;
+        line-height: 1.55;
+      }
     }
 
-    .twp-disclaimer {
-        font-size: 10px;
+    /* -------------------------
+       VERY SMALL PHONES
+    ------------------------- */
+
+    @media (max-width: 360px) {
+      .container {
+        padding-left: 13px;
+        padding-right: 13px;
+      }
+
+      .benefit {
+        font-size: 16px;
+      }
+
+      .telegram-button {
+        font-size: 16px;
+      }
     }
-}
-</style>
+  </style>
+</head>
 
+<body>
 
-<div class="twp-page">
+  <main class="landing-page">
 
-    <div class="twp-container">
+    <div class="container">
 
-        <h1 class="twp-title">
-            Trade With Pushkar
-            <span>Trading Community</span>
-        </h1>
+      <h1 class="headline">
+        #1 Most Profitable<br>
+        Trading Community in India
+      </h1>
 
-        <!-- Replace this with your uploaded Pushkar image URL -->
-        <img
-            class="twp-logo"
-            src="YOUR-IMAGE-URL-HERE"
-            alt="Trade With Pushkar"
-        >
+      <!-- Replace this with the image from your landing page -->
+      <img
+        class="hero-image"
+        src="YOUR-IMAGE-URL-HERE"
+        alt=""
+      >
 
-        <ul class="twp-benefits">
-            <li>Daily Free Trading Signals</li>
-            <li>Free Access to Live Trading Sessions</li>
-            <li>Trading Psychology and Mentorship</li>
-        </ul>
+      <section class="benefits">
 
-        <div class="twp-earning">
-            Learn, Trade and Improve Your Skills
+        <div class="benefit">
+          🔥 DAILY 10-12 Free Sureshot Signals
         </div>
 
-        <a
-            class="twp-button"
-            href="https://t.me/+fMrgH33ZSMc4YWY1"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <span class="twp-button-text">
-                Join Our Free Telegram Channel
-            </span>
-        </a>
-
-        <div class="twp-free">
-            100% Free – Telegram Channel
+        <div class="benefit">
+          👨🏻‍💻 FREE Access to Live Session Everyday
         </div>
 
-        <div class="twp-disclaimer">
-            Disclaimer: This website and Telegram channel are not affiliated
-            with or endorsed by Facebook, Instagram, or Meta. Facebook is a
-            trademark of Meta Platforms, Inc. Trading involves risk, and no
-            guarantees are made regarding your ability to achieve results or
-            earn money from any information, tools, strategies, or content
-            provided. All information is provided for educational and
-            informational purposes only and should not be considered financial
-            advice. Individual results may vary.
+        <div class="benefit">
+          🧠 1-1 Mentorship/Psychological Sessions
         </div>
+
+      </section>
+
+      <div class="earning">
+        💰 Start Earning Today
+      </div>
+
+      <a
+        class="telegram-button"
+        href="https://telegram.me/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join Our Free Telegram Channel
+      </a>
+
+      <div class="free-text">
+        100% Free – Telegram Group
+      </div>
+
+      <div class="disclaimer">
+        Disclaimer: This site is not a part of the Facebook™️ website or
+        Facebook™️ Inc. Additionally, This site is NOT endorsed by Facebook™️
+        in any way. FACEBOOK™️ is a trademark of FACEBOOK™️, Inc. As
+        stipulated by law, we can not and do not make any guarantees about
+        your ability to get results or earn any money with my ideas,
+        information, tools or strategies.
+
+        <br><br>
+
+        I just want to help you by giving great content, direction and
+        strategies that worked well for me and my students and that I believe
+        can help you move forward. All of my terms, privacy policies and
+        disclaimers for this program and website can be accessed via the
+        links. I feel transparency is important and I hold ourselves
+        (you & me) to a high standard of integrity. Thanks for stopping by.
+        I hope this training and content brings you a lot of value & results.
+      </div>
 
     </div>
 
-</div>
+  </main>
+
+</body>
+</html>
