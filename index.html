@@ -1,223 +1,147 @@
 <style>
-/* ==============================
-   TRADE WITH PUSHKAR
-   SIMPLE TELEGRAM LANDING PAGE
-================================ */
-
-.twp-landing {
+.twp-page {
     width: 100%;
     min-height: 100vh;
     background: #ffffff;
     color: #111111;
     font-family: Arial, Helvetica, sans-serif;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
     text-align: center;
-
-    padding: 35px 15px 25px;
+    padding: 20px 15px 30px;
+    box-sizing: border-box;
 }
 
-.twp-box {
+.twp-container {
     width: 100%;
     max-width: 520px;
     margin: 0 auto;
 }
 
+.twp-title {
+    margin: 0 0 20px;
+    font-size: 42px;
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
 
-/* ==============================
-   CENTER IMAGE / LOGO
-================================ */
+.twp-title span {
+    display: block;
+}
 
 .twp-logo {
     display: block;
-
     width: 300px;
     height: 300px;
-
-    max-width: 85vw;
-    max-height: 85vw;
-
-    object-fit: cover;
-
-    margin: 0 auto 22px;
-
-    border-radius: 0;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto 20px;
 }
-
-
-/* ==============================
-   HEADLINE
-================================ */
-
-.twp-heading {
-    margin: 0 auto 25px;
-
-    font-size: 42px;
-    line-height: 1.08;
-
-    font-weight: 800;
-
-    letter-spacing: -1.5px;
-
-    color: #111111;
-}
-
-.twp-heading span {
-    display: block;
-}
-
-
-/* ==============================
-   BENEFITS
-================================ */
 
 .twp-benefits {
-    width: 100%;
-
-    margin: 0 auto 25px;
-
+    margin: 0 auto 20px;
     padding: 0;
-
     list-style: none;
-
-    text-align: left;
 }
 
 .twp-benefits li {
-    margin: 14px 0;
-
-    font-size: 18px;
-
-    line-height: 1.35;
-
+    margin: 11px 0;
+    font-size: 17px;
+    line-height: 1.4;
     font-weight: 600;
-
-    color: #222222;
 }
 
+.twp-earning {
+    margin: 18px 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
 
-/* ==============================
-   CTA BUTTON
-================================ */
-
-.twp-cta {
+.twp-button {
     position: relative;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     width: 100%;
-
     max-width: 430px;
+    min-height: 60px;
+    margin: 0 auto 12px;
+    padding: 16px 20px;
+    box-sizing: border-box;
 
-    min-height: 62px;
-
-    margin: 5px auto 12px;
-
-    padding: 16px 22px;
-
-    background: #229ed9;
-
+    background: #229ED9;
     color: #ffffff !important;
 
     text-decoration: none !important;
+    border-radius: 6px;
 
-    border-radius: 8px;
-
-    font-size: 20px;
-
+    font-size: 19px;
     font-weight: 800;
 
-    letter-spacing: .2px;
-
     overflow: hidden;
+    cursor: pointer;
 
-    box-shadow: 0 6px 18px rgba(34,158,217,.25);
+    box-shadow: 0 5px 15px rgba(34,158,217,0.22);
 
-    animation: twp-pulse 2s infinite;
-
-    transition: transform .2s ease,
-                box-shadow .2s ease;
+    animation: twpPulse 2s infinite;
 }
 
-
-/* Button hover */
-
-.twp-cta:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 28px rgba(34,158,217,.35);
-}
-
-
-/* Button shine */
-
-.twp-cta::after {
+.twp-button::after {
     content: "";
-
     position: absolute;
-
     top: 0;
     left: -120%;
-
-    width: 65%;
+    width: 60%;
     height: 100%;
 
     background: linear-gradient(
         110deg,
         transparent,
-        rgba(255,255,255,.35),
+        rgba(255,255,255,0.40),
         transparent
     );
 
     transform: skewX(-20deg);
-
-    animation: twp-shine 3s infinite;
+    animation: twpShine 3s infinite;
 }
 
-
-/* Keep text above shine */
-
-.twp-cta-text {
+.twp-button-text {
     position: relative;
     z-index: 2;
 }
 
+.twp-free {
+    margin: 10px 0 28px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222222;
+}
 
-/* ==============================
-   BUTTON ANIMATIONS
-================================ */
+.twp-disclaimer {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 5px;
 
-@keyframes twp-pulse {
+    font-size: 11px;
+    line-height: 1.55;
+    color: #666666;
+    text-align: center;
+}
 
+@keyframes twpPulse {
     0% {
-        box-shadow:
-            0 0 0 0 rgba(34,158,217,.35),
-            0 6px 18px rgba(34,158,217,.25);
+        transform: scale(1);
     }
 
-    70% {
-        box-shadow:
-            0 0 0 10px rgba(34,158,217,0),
-            0 8px 24px rgba(34,158,217,.30);
+    50% {
+        transform: scale(1.025);
     }
 
     100% {
-        box-shadow:
-            0 0 0 0 rgba(34,158,217,0),
-            0 6px 18px rgba(34,158,217,.25);
+        transform: scale(1);
     }
 }
 
-
-@keyframes twp-shine {
-
+@keyframes twpShine {
     0% {
         left: -120%;
     }
@@ -231,179 +155,95 @@
     }
 }
 
-
-/* ==============================
-   FREE TEXT
-================================ */
-
-.twp-free {
-    margin: 0 0 28px;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    color: #333333;
-}
-
-
-/* ==============================
-   DISCLAIMER
-================================ */
-
-.twp-disclaimer {
-    margin: 0 auto;
-
-    max-width: 500px;
-
-    font-size: 10px;
-
-    line-height: 1.55;
-
-    color: #777777;
-}
-
-
-/* ==============================
-   MOBILE
-================================ */
-
 @media (max-width: 600px) {
 
-    .twp-landing {
-        padding: 25px 14px 20px;
+    .twp-page {
+        padding: 15px 12px 25px;
+    }
+
+    .twp-title {
+        font-size: 34px;
+        margin-bottom: 15px;
     }
 
     .twp-logo {
-        width: 290px;
-        height: 290px;
-
-        margin-bottom: 20px;
-    }
-
-    .twp-heading {
-        font-size: 35px;
-
-        letter-spacing: -1px;
-
-        margin-bottom: 23px;
+        width: 280px;
+        height: 280px;
+        margin-bottom: 15px;
     }
 
     .twp-benefits li {
         font-size: 16px;
-
-        margin: 13px 0;
+        margin: 10px 0;
     }
 
-    .twp-cta {
-        min-height: 60px;
+    .twp-earning {
+        font-size: 17px;
+    }
 
+    .twp-button {
         font-size: 18px;
+        min-height: 58px;
     }
 
+    .twp-disclaimer {
+        font-size: 10px;
+    }
 }
 </style>
 
 
-<div class="twp-landing">
+<div class="twp-page">
 
-    <div class="twp-box">
+    <div class="twp-container">
 
+        <h1 class="twp-title">
+            Trade With Pushkar
+            <span>Trading Community</span>
+        </h1>
 
-        <!-- =========================
-             CENTERED LOGO / IMAGE
-        ========================== -->
-
+        <!-- Replace this with your uploaded Pushkar image URL -->
         <img
             class="twp-logo"
             src="YOUR-IMAGE-URL-HERE"
             alt="Trade With Pushkar"
         >
 
-
-        <!-- =========================
-             HEADLINE
-        ========================== -->
-
-        <h1 class="twp-heading">
-
-            Trade With Pushkar
-
-            <span>
-                📈🚀
-            </span>
-
-        </h1>
-
-
-        <!-- =========================
-             BENEFITS
-        ========================== -->
-
         <ul class="twp-benefits">
-
-            <li>
-                🔥 Daily Market Updates
-            </li>
-
-            <li>
-                👨🏻‍💻 Free Trading Education & Insights
-            </li>
-
-            <li>
-                🧠 Trading Psychology & Market Discussions
-            </li>
-
-            <li>
-                💰 Learn. Analyze. Trade.
-            </li>
-
+            <li>Daily Free Trading Signals</li>
+            <li>Free Access to Live Trading Sessions</li>
+            <li>Trading Psychology and Mentorship</li>
         </ul>
 
-
-        <!-- =========================
-             TELEGRAM BUTTON
-        ========================== -->
+        <div class="twp-earning">
+            Learn, Trade and Improve Your Skills
+        </div>
 
         <a
-            class="twp-cta"
+            class="twp-button"
             href="https://t.me/+fMrgH33ZSMc4YWY1"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
         >
-
-            <span class="twp-cta-text">
+            <span class="twp-button-text">
                 Join Our Free Telegram Channel
             </span>
-
         </a>
 
-
-        <!-- =========================
-             FREE TEXT
-        ========================== -->
-
         <div class="twp-free">
-
             100% Free – Telegram Channel
-
         </div>
-
-
-        <!-- =========================
-             DISCLAIMER
-        ========================== -->
 
         <div class="twp-disclaimer">
-
-            Disclaimer: Trading involves risk and no profit is guaranteed.
-            The information shared on this website and Telegram channel
-            is for educational and informational purposes only and should
-            not be considered financial advice. Past performance does not
-            guarantee future results.
-
+            Disclaimer: This website and Telegram channel are not affiliated
+            with or endorsed by Facebook, Instagram, or Meta. Facebook is a
+            trademark of Meta Platforms, Inc. Trading involves risk, and no
+            guarantees are made regarding your ability to achieve results or
+            earn money from any information, tools, strategies, or content
+            provided. All information is provided for educational and
+            informational purposes only and should not be considered financial
+            advice. Individual results may vary.
         </div>
-
 
     </div>
 
